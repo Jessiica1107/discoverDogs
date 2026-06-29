@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --sand: #F7F3EE;
+  --bark: #2C1A0E;
+  --toffee: #A0522D;
+  --cream: #FDF9F4;
+  --mist: #E8E0D5;
+  --banned: #C0392B;
+  --banned-bg: #FDF0EE;
+  --radius: 12px;
+  --shadow: 0 4px 24px rgba(44, 26, 14, .10);
+}
+
+body {
+  background: var(--sand);
+  color: var(--bark);
+}
+
+/* ── Header ── */
+.header {
+  background: var(--bark);
+  padding: 28px 32px;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.logo-text {
+  font-size: 40px;
+  color: #fff;
+}
+
+/* ── Layout ── */
+.main {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 24px 80px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ── Card area ── */
+.card-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+/* ── Discover button ── */
+.discover-btn {
+  background: var(--toffee);
+  color: #fff;
+  border: none;
+  padding: 16px 48px;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(160, 82, 45, .35);
+}
+
+.discover-btn:hover:not(:disabled) {
+  background: #8b4423;
+  box-shadow: 0 6px 20px rgba(160, 82, 45, .45);
+}
+
+.discover-btn:disabled {
+  opacity: .7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+/* ── Empty state ── */
+.empty-state {
+  text-align: center;
+  color: #8a7060;
+  padding: 48px 24px;
+  background: var(--cream);
+  border-radius: var(--radius);
+  border: 1.5px dashed var(--mist);
+  width: 100%;
+  max-width: 520px;
+}
+
+.empty-state p {
+  font-size: .95rem;
+  line-height: 1.6;
+}
+
+/* ── Error ── */
+.error-msg {
+  background: var(--banned-bg);
+  color: var(--banned);
+  border: 1px solid #f5c6c2;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: .875rem;
+  max-width: 520px;
+  text-align: center;
+}
+
+/* ── Dog card ── */
+.dog-card {
+  background: var(--cream);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  width: 100%;
+  max-width: 520px;
+}
+
+.card-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 320px;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-img-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 20px 16px;
+}
+
+.dog-name {
+  font-size: 30px;
+  color: #fff;
+}
+
+.card-body {
+  padding: 20px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.attr-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.attr-row--column {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.attr-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #8a7060;
+  min-width: 80px;
+}
+
+.attr-static {
+  font-size: .9rem;
+  color: var(--bark);
+  font-weight: 500;
+}
+
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  border-radius: 20px;
+  font-size: .8rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1.5px solid var(--mist);
+  background: var(--sand);
+  color: var(--bark);
+}
+
+.tag:hover {
+  background: #ede5d8;
+  border-color: #c8bfb4;
+}
+
+.tag--banned {
+  background: var(--banned-bg);
+  border-color: #f5c6c2;
+  color: var(--banned);
+}
+
+.tag--banned:hover {
+  background: #f9dbd8;
+}
+
+.tag-x {
+  font-size: .7rem;
+  opacity: .8;
+}
+
+/* ── Ban sidebar ── */
+.ban-sidebar {
+  background: var(--cream);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  position: sticky;
+  top: 24px;
+}
+
+.ban-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.ban-title {
+  font-size: 1.15rem;
+  color: var(--bark);
+}
+
+.clear-btn {
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--banned);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.clear-btn:hover {
+  background: var(--banned-bg);
+}
+
+.ban-empty {
+  font-size: .825rem;
+  color: #8a7060;
+}
+
+.ban-hint {
+  color: var(--toffee);
+  font-weight: 500;
+}
+
+.ban-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ban-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--banned-bg);
+  border: 1px solid #f5c6c2;
+  cursor: pointer;
+  gap: 8px;
+}
+
+.ban-item:hover {
+  background: #f9dbd8;
+}
+
+.ban-val {
+  font-size: .825rem;
+  color: var(--banned);
+  font-weight: 500;
+  flex: 1;
+}
+
+.ban-remove {
+  font-size: .7rem;
+  color: var(--banned);
+  opacity: .7;
+  flex-shrink: 0;
+}
